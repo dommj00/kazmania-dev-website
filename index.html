@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KAZMANIA LLC | Mobile and web applications</title>
+<meta name="description" content="KAZMANIA LLC is a software company that creates mobile and web applications.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230e1320%27/%3E%3Ctext x=%2732%27 y=%2745%27 font-size=%2740%27 font-family=%27sans-serif%27 font-weight=%27800%27 text-anchor=%27middle%27 fill=%27%23b4a7ff%27%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0e1320;
+  --panel: #151c2e;
+  --line: #263049;
+  --text: #eceef4;
+  --muted: #a0a9bf;
+  --accent: #b4a7ff;
+  --accent-ink: #14112b;
+  color-scheme: dark;
+  box-sizing: border-box;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .brand { font-family: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: #fff; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+p { margin: 0 0 1rem; }
+
+.wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Header */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(14, 19, 32, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .wrap { display: flex; justify-content: space-between; align-items: center; height: 4rem; }
+.brand { font-weight: 800; font-size: 1.15rem; letter-spacing: 0.06em; color: var(--text); text-decoration: none; }
+.brand:hover { color: var(--text); }
+.topbar nav { display: flex; gap: 1.75rem; align-items: center; }
+.topbar nav a { color: var(--muted); text-decoration: none; font-size: 0.98rem; }
+.topbar nav a:hover { color: var(--text); }
+.topbar nav a.btn-nav {
+  color: var(--accent-ink); background: var(--accent);
+  padding: 0.45rem 1rem; border-radius: 6px; font-weight: 600;
+}
+.topbar nav a.btn-nav:hover { background: #fff; color: var(--accent-ink); }
+
+/* Hero */
+.hero { padding: 6.5rem 0 5.5rem; }
+.hero h1 {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  margin: 0 0 1.75rem;
+  max-width: 14ch;
+}
+.hero p.lead { font-size: 1.3rem; color: var(--muted); max-width: 36rem; margin-bottom: 2.25rem; }
+.actions { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 600;
+  padding: 0.8rem 1.4rem; border-radius: 8px; border: 1px solid var(--line); color: var(--text);
+}
+.btn:hover { border-color: var(--muted); color: var(--text); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover { background: #fff; border-color: #fff; color: var(--accent-ink); }
+
+/* Sections */
+section.block { border-top: 1px solid var(--line); padding: 4.5rem 0; }
+.split { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 3rem; }
+.split > h2 { margin: 0; font-size: 1.5rem; letter-spacing: -0.01em; line-height: 1.2; }
+.body { max-width: 42rem; }
+.body p { color: #d3d7e3; }
+
+.services { margin-top: 2.5rem; border-top: 1px solid var(--line); }
+.service { padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+.service h3 { margin: 0 0 0.3rem; font-size: 1.15rem; }
+.service p { margin: 0; color: var(--muted); }
+
+/* Apps */
+.app {
+  display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1.6rem 1.75rem;
+}
+.app h3 { margin: 0 0 0.3rem; font-size: 1.3rem; }
+.app p { margin: 0; color: var(--muted); max-width: 30rem; }
+.more { margin-top: 1.25rem; color: var(--muted); }
+
+/* Contact */
+.facts { margin: 1.75rem 0 0; display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 0.6rem 1rem; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; }
+.faq { margin-top: 3.25rem; }
+.faq > h3 { font-size: 1.3rem; margin: 0 0 1rem; }
+details { border-bottom: 1px solid var(--line); }
+details:first-of-type { border-top: 1px solid var(--line); }
+summary {
+  cursor: pointer; list-style: none; padding: 1.1rem 2rem 1.1rem 0; font-weight: 600; position: relative;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 0.25rem; top: 1rem; font-size: 1.4rem; color: var(--accent); line-height: 1.2; }
+details[open] summary::after { content: "\2212"; }
+details p, details ul { color: var(--muted); margin: 0 0 1.1rem; }
+details ul { padding-left: 1.25rem; }
+
+/* Legal */
+.legal { padding: 4rem 0 5rem; }
+.legal h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); letter-spacing: -0.02em; margin: 0 0 0.5rem; line-height: 1.1; }
+.legal .dates { color: var(--muted); margin-bottom: 2.5rem; }
+.legal .col { max-width: 44rem; }
+.legal h2 { font-size: 1.35rem; margin: 2.75rem 0 0.75rem; letter-spacing: -0.01em; }
+.legal h3 { font-size: 1.08rem; margin: 1.5rem 0 0.4rem; }
+.legal ul { padding-left: 1.25rem; }
+.legal li { margin-bottom: 0.5rem; }
+.legal p, .legal li { color: #d3d7e3; }
+.promise { border-left: 3px solid var(--accent); background: var(--panel); padding: 1.25rem 1.5rem; border-radius: 0 10px 10px 0; margin-bottom: 1rem; }
+.promise strong { display: block; margin-bottom: 0.35rem; }
+.promise p { margin: 0; }
+
+/* Footer */
+footer.site { border-top: 1px solid var(--line); padding: 2.25rem 0 3rem; color: var(--muted); font-size: 0.95rem; }
+footer.site .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+footer.site .links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+footer.site a { color: var(--muted); text-decoration: none; }
+footer.site a:hover { color: var(--text); text-decoration: underline; }
+
+@media (max-width: 760px) {
+  .split { grid-template-columns: 1fr; gap: 1.25rem; }
+  .hero { padding: 4rem 0 3.5rem; }
+  section.block { padding: 3.25rem 0; }
+  .topbar nav { gap: 1.1rem; }
+  .facts { grid-template-columns: 1fr; gap: 0; }
+  .facts dd { margin-bottom: 0.9rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">KAZMANIA</a>
+  <nav aria-label="Main">
+    <a href="index.html#about">About</a>
+    <a href="index.html#apps">Apps</a>
+    <a href="index.html#contact" class="btn-nav">Contact</a>
+  </nav>
+</div></header>
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Mobile and web apps, built with care.</h1>
+      <p class="lead">KAZMANIA LLC is a software company that designs and builds mobile and web applications that are simple to use and respectful of your data.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn" href="#apps">See our apps</a>
+      </div>
+    </section>
+  </div>
+
+  <section class="block" id="about">
+    <div class="wrap split">
+      <h2>About</h2>
+      <div class="body">
+        <p>KAZMANIA LLC is a software company based in Maryland, USA. We create mobile and web applications, from the first sketch to the version in your hands, and we keep improving them long after launch.</p>
+        <p>Our approach is straightforward: build software that does its job well, keep the interface clear, and treat the information people trust us with carefully. Wherever we can, we design our apps so your data stays on your device, and we're upfront about anything that doesn't.</p>
+        <div class="services">
+          <div class="service"><h3>Mobile apps</h3><p>Polished, dependable apps for the device in your pocket, built and supported through every release.</p></div>
+          <div class="service"><h3>Web applications</h3><p>Fast, accessible web apps and the sites that support them.</p></div>
+          <div class="service"><h3>Ongoing support</h3><p>Updates, fixes, and real answers when something goes wrong.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="apps">
+    <div class="wrap split">
+      <h2>Apps</h2>
+      <div class="body">
+        <div class="app">
+          <div>
+            <h3>Brightli</h3>
+            <p>A personal planning and reflection app to help you grow a little every day. Your activities and reflections stay on your device.</p>
+          </div>
+          <a class="btn" href="https://www.brightliapp.com" rel="noopener">Visit brightliapp.com</a>
+        </div>
+        <p class="more">More apps are in development.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap split">
+      <h2>Contact us</h2>
+      <div class="body">
+        <p>Have a question about one of our apps, feedback to share, or a business inquiry? Send us an email and we'll reply within a few business days.</p>
+        <dl class="facts">
+          <dt>Email</dt><dd><a href="mailto:contact@kazmania.dev">contact@kazmania.dev</a></dd>
+          <dt>Location</dt><dd>Maryland, USA</dd>
+        </dl>
+
+        <div class="faq" id="faq">
+          <h3>Common questions</h3>
+          <details>
+            <summary>How do I get help with an app?</summary>
+            <p>Email <a href="mailto:contact@kazmania.dev">contact@kazmania.dev</a> and include:</p>
+            <ul>
+              <li>The name of the app and its version</li>
+              <li>Your device model and operating system version</li>
+              <li>What you expected to happen and what happened instead</li>
+              <li>Screenshots, if they help</li>
+            </ul>
+          </details>
+          <details>
+            <summary>How do I request a refund?</summary>
+            <p>Purchases are handled by Apple, so refunds go through them. Visit <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a> to submit a request.</p>
+          </details>
+          <details>
+            <summary>How do I delete my data?</summary>
+            <p>Our apps are designed to keep your data on your device, so you can remove it inside the app or by uninstalling it. To ask about anything we hold, email us. Details are in our <a href="privacy.html">Privacy Policy</a>.</p>
+          </details>
+          <details>
+            <summary>Where do I report a bug or suggest a feature?</summary>
+            <p>Email us at the address above. We read every message.</p>
+          </details>
+          <details>
+            <summary>How do I reach you about a business inquiry?</summary>
+            <p>Use the same email address and tell us a little about what you have in mind.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site"><div class="wrap">
+  <span>&copy; 2026 KAZMANIA LLC. All rights reserved.</span>
+  <span class="links"><a href="privacy.html">Privacy Policy</a><a href="index.html#contact">Support</a><a href="mailto:contact@kazmania.dev">contact@kazmania.dev</a></span>
+</div></footer>
+</body>
+</html>
